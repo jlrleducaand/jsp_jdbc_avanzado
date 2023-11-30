@@ -27,9 +27,9 @@ th{
         color-stop(0.51, rgb(139,198,66)),
         color-stop(0.87, rgb(158,217,41))
         );
-    background: -moz-linear-gradient(
-        center bottom,
-        rgb(123,192,67) 2%,
+    background: linear-gradient(
+        to bottom,
+        rgb(123,192,67)2%,
         rgb(139,198,66) 51%,
         rgb(158,217,41) 87%
         );
@@ -55,4 +55,23 @@ tbody td{
     border-radius:2px;
     color:#666;
     text-shadow:1px 1px 1px #fff;
+}
+v{
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.4em;
+    font-style: normal;
+    background-color: #568F23;
+    /*background: linear-gradient(
+            to bottom,
+            rgb(123,192,67)2%,
+            rgb(139,198,66) 51%,
+            rgb(158,217,41) 87%
+      );
+   */
+}
+.destacar > td {
+    color: yellow;
+    background-color: red;
 }

@@ -41,6 +41,8 @@ CREATE TABLE IF NOT EXISTS `socio` (
 -- Volcado de datos para la tabla `socio`
 --
 
+
+
 INSERT INTO `socio` (`socioID`, `nombre`, `estatura`, `edad`, `localidad`) VALUES
 (1235, 'Bermúdez Espada, Ana María', 186, 46, 'Málaga'),
 (1236, 'Cano Cuenca, Margarita', 161, 48, 'Málaga'),

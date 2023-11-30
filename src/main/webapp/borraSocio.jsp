@@ -4,14 +4,17 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	  <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
   <body>
     <%
     //CÓDIGO DE VALIDACIÓN
     boolean valida = true;
     int codigo = -1;
+
     try {
-    	codigo = Integer.parseInt(request.getParameter("codigo"));
+    	codigo = Integer.parseInt(request.getParameter("socioID"));
     } catch (NumberFormatException nfe) {
     	nfe.printStackTrace();
     	valida = false;
@@ -24,14 +27,14 @@
       
 	Connection conn = null;
 	PreparedStatement ps = null;
-// 	ResultSet rs = null;
+ 	// ResultSet rs = null;
 
 	 try {
 		 
 		//CARGA DEL DRIVER Y PREPARACIÓN DE LA CONEXIÓN CON LA BBDD
 		//						v---------UTILIZAMOS LA VERSIÓN MODERNA DE LLAMADA AL DRIVER
-		Class.forName("com.mysql.cj.jdbc.Driver");
-		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/baloncesto","root", "user");
+		Class.forName("com.mysql.cj.jdbc.Driver");  // desde classPath
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/baloncesto","root", "1234");
 		
 //>>>>>>NO UTILIZAR STATEMENT EN QUERIES PARAMETRIZADAS
 //      Statement s = conexion.createStatement();
@@ -68,6 +71,9 @@
     %>
     
     <!-- REDIRECCIÓN POR JavaScript EN EL CLIENTE  -->
-    <script>document.location = "pideNumeroSocio.jsp"</script> 
+    <script>document.location = "pideNumeroSocio.jsp"</script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>

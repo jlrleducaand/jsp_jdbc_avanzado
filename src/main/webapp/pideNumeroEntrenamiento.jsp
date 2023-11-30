@@ -15,54 +15,52 @@
     Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/baloncesto", "root", "1234");
     Statement s = conexion.createStatement();
 
-    ResultSet listado = s.executeQuery("SELECT * FROM socio");
+    ResultSet listado = s.executeQuery("SELECT * FROM entrenamiento");
 %>
 <table>
     <tr>
         <th>Código</th>
-        <th>Nombre</th>
-        <th>Estatura</th>
-        <th>Edad</th>
-        <th>Localidad</th>
+        <th>Tipo Entrenamiento</th>
+        <th>Ubicacion</th>
+        <th>Fecha </th>
     </tr>
     <%
-        Integer socioIDADestacar = (Integer) session.getAttribute("socioIDADestacar");
+        Integer entrenamientoIDADestacar = (Integer) session.getAttribute("entrenamientoIDADestacar");
         String claseDestacar = "";
 
         while (listado.next()) {
-            claseDestacar = (socioIDADestacar != null
-                    && socioIDADestacar == listado.getInt("socioID")) ?
+            claseDestacar = (entrenamientoIDADestacar != null
+                    && entrenamientoIDADestacar == listado.getInt("entrenamientoID")) ?
                     "destacar" : "";
     %>
 
     <tr class="<%= claseDestacar%>">
         <td>
-            <%=listado.getInt("socioID")%>
+            <%=listado.getInt("entrenamientoID")%>
         </td>
-        <td><%=listado.getString("nombre")%>
+        <td><%=listado.getString("tipo_entrenamiento")%>
         </td>
-        <td><%=listado.getInt("estatura")%>
+        <td><%=listado.getString("ubicacion")%>
         </td>
-        <td><%=listado.getInt("edad")%>
-        </td>
-        <td><%=listado.getString("localidad")%>
+        <td><%=listado.getDate("fecha_realizacion")%>
         </td>
 
+
         <td class="row">
-            <form method="get" action="borraSocio.jsp">
-                <input type="hidden" name="socioID" value="<%=listado.getString("socioID") %>"/>
+            <form method="PUSH" action="borraEntrenamiento.jsp">
+                <input type="hidden" name="entrenamientoID" value="<%=listado.getString("entrenamientoID") %>"/>
                 <input type="submit" value="Borrar">
             </form>
         </td>
         <td class="row">
-            <form method="get" action="detalleSocio.jsp">
-                <input type="hidden" name="socioID" value="<%=listado.getString("socioID") %>"/>
+            <form method="get" action="detalleEntrenamiento.jsp">
+                <input type="hidden" name="entrenamientoID" value="<%=listado.getString("entrenamientoID") %>"/>
                 <input type="submit" value="Detalle">
             </form>
         </td>
         <td class="row">
-            <form method="get" action="index.jsp">
-                <input type="hidden" name="volver" value="<%=listado.getString("socioID") %>"/>
+            <form method="get" action="entrenamiento.jsp">  <!-- index.jsp -->
+                <input type="hidden" name="volver" value="<%=listado.getString("entrenamientoID") %>"/>
                 <input type="submit" value="Volver">
             </form>
         </td>

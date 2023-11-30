@@ -11,10 +11,10 @@
 <body>
 <div class="container">
     <div class="row">
-        <h1>Listado de Socios</h1>
+        <h1>Listado de Entrenamientos</h1>
         <tr >
             <td class="mx-5 px-5 d-flex align-item-center">
-                <form class="m-5 px-5" method="get" action="index.jsp">
+                <form class="m-5 px-5" method="get" action="pideNumeroEntrenamiento.jsp">
                     <input type="submit" value="Volver">
                 </form>
             </td>
@@ -32,10 +32,10 @@
         //UTILIZAR STATEMENT SÓLO EN QUERIES NO PARAMETRIZADAS  o PLANAS.
         // STATEMENT se utiliza el objeto para enviar consultas  y actualizaciones a las BBDD
         Statement s = conexion.createStatement();
-        ResultSet listado = s.executeQuery("SELECT * FROM socio");
+        ResultSet listado = s.executeQuery("SELECT * FROM entrenamiento");
 
         while (listado.next()) {
-            out.println(listado.getString("socioID") + " " + listado.getString("nombre") + "<br>");
+            out.println(listado.getString("entrenamientoID") + " " + listado.getString("tipo_entrenamiento") + "<br>");
         }
         listado.close();
         s.close();
