@@ -10,16 +10,13 @@
 </head>
 <body>
 <div class="container">
-    <div class="row">
-        <h1>Listado de Entrenamientos</h1>
-        <tr >
-            <td class="mx-5 px-5 d-flex align-item-center">
-                <form class="m-5 px-5" method="get" action="pideNumeroEntrenamiento.jsp">
-                    <input type="submit" value="Volver">
-                </form>
-            </td>
-        </tr>
-
+    <div>
+        <h1 class="text-center">Listado de Entrenamientos</h1>
+        <div>
+              <form class="col-2 btn btn-primary" method="get" action="entrenamiento.jsp">
+              <input type="submit" value="Volver">
+              </form>
+        </div>
     </div>
 
 

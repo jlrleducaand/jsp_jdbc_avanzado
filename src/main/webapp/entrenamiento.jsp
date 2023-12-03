@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="container d-flex  text-center">
-    <h1 class="col"><%= "Entrenamientos" %>
+    <h1 class="col"><%= "Menu " %>Entrenamientos
     </h1>
 </div>
 <br/>
@@ -27,10 +27,7 @@
         <label class=" bg-primary  m-2 rounded p-2 text-white">Carga Entrenamiento con ID:</label>
         <input type="text" name="entrenamientoID">
         <input type="submit" value="Enviar" class="v">
-    </form>
-
-    <form  action="index.jsp" >
-        <input  type="submit" value="Volver" >
+        <a href="index.jsp" class=" bg-primary  m-2 rounded p-2 text-white">Volver</a>
     </form>
 
 </div>
