@@ -44,8 +44,9 @@
             String sql = "SELECT * FROM entrenamiento WHERE entrenamientoID = ?";
 
             ps = conn.prepareStatement(sql);
-            ps.setInt(1, entrenamientoID);
+            ps.setInt(1, entrenamientoID); // la primera ? será el valor pasado
             rs = ps.executeQuery();
+
 
             if (rs.next()) {
 
@@ -54,7 +55,9 @@
                 String ubicacion = rs.getString("ubicacion");
                 Date fechaRealizacion = rs.getDate("fecha_realizacion");
 %>
-<table class="m-2">
+<div class="container text-center">
+    <h1>DETALLE DE ENTRENAMIENTO</h1><br/>
+<table class="container m-2">
     <thead>
     <tr>
         <th class="p-2">EntrenamientoID</th>
@@ -83,7 +86,6 @@
     </tbody>
 </table>
 
-
 <%
             }
 
@@ -102,6 +104,9 @@
             try {
                 conn.close();
             } catch (Exception e) { /* Ignored */ }
+            try {
+                rs.close();
+            } catch (Exception e) { /* Ignored */}
         }
 
         out.println("\t Entrenamiento dado de alta.");
@@ -116,6 +121,8 @@
     }
 
 %>
+</div>
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

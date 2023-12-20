@@ -13,24 +13,28 @@
     <link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
 <body>
-<h2 class="col-6 text-center">Introduzca los datos del nuevo Entrenamiento:</h2>
-<form method="post" action="grabaEntrenamiento.jsp">
+<div class="container">
+
+<h2 class="text-center">FORMULARIO DE ENTRENAMIENTO NUEVO</h2><br/>
+<form class="container text-center" method="post" action="grabaEntrenamiento.jsp">
     <!--LOS VALORES NO LOS RESCATA POR QUE EN LA VALIDACION NO SE GRABAN HASTA QUE NO ESTAN TODOS CORRECTOS (BUSCAR OTRO METODO)  estan comentados -->
-    <div class="row m-2"><label class="col-2 bg-primary m-2 rounded p-2 text-white">Tipo Entrenamiento</label>
-        <select class="col-4 "type="text" name="tipo_entrenamiento"
+    <div><label class="col-3 bg-primary rounded m-2 p-2 text-white">Tipo Entrenamiento</label>
+        <select class="col-3 p-2 "type="text" name="tipo_entrenamiento"
         <option value=""> </option>
         <option value="fisico">Físico</option>
         <option value="tecnico">Técnico</option>
         </select>
     </div>  </br>
-    <div class="row m-2"><label class="col-2 bg-primary m-2 rounded p-2 text-white">Ubicacion</label>     <input class="col-4 "type="text" name="ubicacion" ></div>  </br>
-    <div class="row m-2"><label class="col-2 bg-primary m-2 rounded p-2 text-white">Fecha Realizacion</label><input class="col-4 "type="date" name="fecha_realizacion" ></div>  </br>
+    <div><label class="col-3 bg-primary  rounded p-2 m-2 text-white">Ubicacion</label><input class="col-3 p-2"type="text" name="ubicacion" ></div>  </br>
+    <div><label class="col-3 bg-primary  rounded p-2 m-2 text-white">Fecha Realizacion</label><input class="col-3 p-2"type="date" name="fecha_realizacion" ></div>  </br>
 
     <input class="col-6 m-2  text-center bg-warning" type="submit" value="Aceptar">
+
+
 </form>
-<form method="get" action="entrenamiento.jsp">
-    <input class="col-6 m-2  text-center bg-alert" type="submit" value="Volver">
-</form>
+    <form method="get" action="entrenamiento.jsp" class="container text-center">
+        <input class="col-6 m-2  text-center bg-alert" type="submit" value="Volver">
+    </form>
 
 
 
@@ -38,10 +42,10 @@
     if (session.getAttribute("error") != null){
         System.out.println(session.getAttribute("error"));
 %>
-<h4><%= session.getAttribute("error")%></h4>
+<h4 class="text-center"><%= session.getAttribute("error")%></h4>
 <%}%>
 
-
+</div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

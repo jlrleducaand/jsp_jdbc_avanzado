@@ -2,14 +2,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+    <!-- Este hace d index para los entrenamientos -->
     <title>JSP Entrenamientos</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
 <div class="container d-flex  text-center">
-    <h1 class="col"><%= "Menu " %>Entrenamientos
-    </h1>
+    <h1 class="col"><%= "MENU " %>DE ENTRENAMIENTOS</h1>
 </div>
 <br/>
 <div class="container d-flex justify-content-between">
@@ -18,7 +19,8 @@
     <br>
     <a href="formularioEntrenamiento.jsp" class="col-4 btn btn-primary m-2">Fomulario de Entrenamiento Nuevo</a>
     <br>
-    <a href="pideNumeroEntrenamiento.jsp" class="col-4 btn btn-primary m-2 ">Pide número de Entrenamiento</a>
+    <a href="pideNumeroEntrenamiento.jsp" class="col-4 btn btn-primary m-2 "> Crud de Entrenamiento</a>
+
 </div>
 <br>
 <div class="row justify-content-center">

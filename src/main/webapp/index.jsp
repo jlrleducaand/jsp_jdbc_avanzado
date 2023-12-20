@@ -13,18 +13,18 @@
 </div>
 <br/>
 <div class="container d-flex justify-content-center">
-<a href="entrenamiento.jsp" class="col-3 btn btn-primary m-2">Entrenamiento</a>
+<a href="entrenamiento.jsp" class="col-3 btn btn-primary m-2">Menu Entrenamiento</a>
 <br>
 <a href="listadoSocios.jsp" class="col-3 btn btn-primary m-2">Listado de Socios</a>
 <br>
 <a href="formularioSocio.jsp" class="col-3 btn btn-primary m-2">Fomulario de Socio Nuevo</a>
 <br>
-<a href="pideNumeroSocio.jsp" class="col-3 btn btn-primary m-2 ">Pide número de Socios</a>
+<a href="pideNumeroSocio.jsp" class="col-3 btn btn-primary m-2 ">Crud de Socios</a>
 </div>
 <br>
 <div>
 <form action="detalleSocio.jsp" class="container">
-    <label class=" bg-primary  m-2 rounded p-2 text-white">Carga socio con ID:</label>
+    <label class=" bg-primary  m-2 rounded p-2 text-white">Carga Socio con ID:</label>
     <input type="text" name="socioID" >
     <input type="submit" value="Enviar" class="v">
 </form>

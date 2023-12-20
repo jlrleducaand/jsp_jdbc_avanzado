@@ -1,11 +1,10 @@
 <%@page import="java.sql.*" %>
-<%@page import="java.util.Objects" %>
-<%@ page import="java.io.IOException" %>
-<%@ page import="javax.swing.*" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
+
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Detalle Socio</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles.css"/>
@@ -67,7 +66,9 @@
                 int edad = rs.getInt("edad");
                 String localidad = rs.getString("localidad");
 %>
-<table class="m-2">
+<div class="container text-center">
+    <h1>DETALLE DE SOCIO</h1><br/>
+<table class="container m-2">
     <thead>
     <tr>
         <th class="p-2">SocioID</th>
@@ -131,6 +132,7 @@
     }
 
 %>
+</div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

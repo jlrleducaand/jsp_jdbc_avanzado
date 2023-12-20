@@ -44,12 +44,11 @@
         flagValidaNombreBlank = true;
         nombre = request.getParameter("nombre");
 
+        edad = Integer.parseInt(request.getParameter("edad"));
+        flagValidaEdad = true;
 
         estatura = Integer.parseInt(request.getParameter("estatura"));
         flagValidaEstatura = true;
-
-        edad = Integer.parseInt(request.getParameter("edad"));
-        flagValidaEdad = true;
 
         //UTILIZO LOS CONTRACTS DE LA CLASE Objects PARA LA VALIDACIÓN
         //             v---- LANZA NullPointerException SI EL PARÁMETRO ES NULL
@@ -77,15 +76,16 @@
             session.setAttribute("error", "Error en localidad.");
         }
 
-        valida = false;
+        valida = false;  //retorna a false al caer en cualquier error
     }
     //FIN CÓDIGO DE VALIDACIÓN
 
+    //EMPIEZA LOGICA DE CODIGO
     if (valida) {
-
+        //OBJETOS NECESARIOS
         Connection conn = null;
-        PreparedStatement ps = null;
-        // ResultSet rs = null;
+        PreparedStatement ps = null; //PARAMETRIZADAS
+        // ResultSet rs = null;  //NO NECESITAMOS RECUPERAR RESULTADOS DE LA QUERRY
 
         try {
 
@@ -96,7 +96,7 @@
 
 
 //>>>>>>NO UTILIZAR STATEMENT EN QUERIES PARAMETRIZADAS
-//       Statement s = conexion.createStatement();
+//       Statement s = conn.createStatement();
 //       String insercion = "INSERT INTO socio VALUES (" + Integer.valueOf(request.getParameter("numero"))
 //                          + ", '" + request.getParameter("nombre")
 //                          + "', " + Integer.valueOf(request.getParameter("estatura"))
@@ -105,7 +105,7 @@
 //       s.execute(insercion);
 //<<<<<<
 
-            String sql = "INSERT INTO socio VALUES ( " +
+            String sql = "INSERT INTO socio VALUES (" +
                     "?, " + //socioID
                     "?, " + //nombre
                     "?, " + //estatura

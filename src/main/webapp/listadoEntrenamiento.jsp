@@ -4,19 +4,22 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Listado Socios</title>
+    <title>Listado Entrenamientos</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
+
 <div class="container">
-    <div>
-        <h1 class="text-center">Listado de Entrenamientos</h1>
-        <div>
-              <form class="col-2 btn btn-primary" method="get" action="entrenamiento.jsp">
+    <div class="row">
+        <h1>Listado de Entrenamientos</h1>
+        <tr>
+            <td class="mx-5 px-5 d-flex align-item-center">
+              <form class="m-5 px-5"  method="get" action="entrenamiento.jsp">
               <input type="submit" value="Volver">
               </form>
-        </div>
+            </td>
+        </tr>
     </div>
 
 
@@ -31,7 +34,9 @@
         Statement s = conexion.createStatement();
         ResultSet listado = s.executeQuery("SELECT * FROM entrenamiento");
 
+        //puedo poner una cabecera de tabla con html
         while (listado.next()) {
+            //puedo poner una celda con cada informacion para campo deseado con html
             out.println(listado.getString("entrenamientoID") + " " + listado.getString("tipo_entrenamiento") + "<br>");
         }
         listado.close();
