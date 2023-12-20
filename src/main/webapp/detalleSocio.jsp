@@ -122,12 +122,10 @@
 
         out.println("\t Socio dado de alta.");
     } else {
-        out.println("<div><h3 class='text-center'>Error de validación!</h3>");
-        out.println("<td>"
-                + "<form method='get' action='index.jsp'>"
+        out.println("<div class='container text-center' ><h3>Error de validación!</h3>");
+        out.println("<form method='get' action='index.jsp'>"
                 + "<input type='submit' value='Volver'>"
                 + "</form>"
-                + "</td>"
                 + "</div>");
     }
 

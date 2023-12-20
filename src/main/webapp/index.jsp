@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="container d-flex  text-center">
-<h1 class="col"><%= "Club de Baloncesto" %>
+<h1 class="col"><%= "CLUB DE BALONCESTO" %>
 </h1>
 </div>
 <br/>
@@ -23,10 +23,10 @@
 </div>
 <br>
 <div>
-<form action="detalleSocio.jsp" class="container">
+<form class="container" action="detalleSocio.jsp">
     <label class=" bg-primary  m-2 rounded p-2 text-white">Carga Socio con ID:</label>
-    <input type="text" name="socioID" >
-    <input type="submit" value="Enviar" class="v">
+    <input type="text" name="socioID">
+    <input type="submit" value="Enviar">
 </form>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
