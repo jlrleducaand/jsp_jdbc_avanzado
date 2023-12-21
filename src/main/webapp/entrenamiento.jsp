@@ -26,10 +26,10 @@
 <div class="row justify-content-center">
 
     <form action="detalleEntrenamiento.jsp" class="container">
-        <label class=" bg-primary  m-2 rounded p-2 text-white">Carga Entrenamiento con ID:</label>
-        <input type="text" name="entrenamientoID">
-        <input type="submit" value="Enviar" class="v">
-        <a href="index.jsp" class=" bg-primary  m-2 rounded p-2 text-white">Volver</a>
+        <label class=" bg-secondary  m-2 rounded p-2 text-white">Carga Entrenamiento con ID:</label>
+        <input class="p-2 m-2" type="text" name="entrenamientoID">
+        <input class="btn btn-warning p-2 m-2" type="submit" value="Enviar" >
+        <a href="index.jsp" class=" btn btn-primary  p-2 m-2 rounded text-white">Volver</a>
     </form>
 
 </div>

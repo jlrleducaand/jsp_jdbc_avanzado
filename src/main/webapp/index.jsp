@@ -24,9 +24,9 @@
 <br>
 <div>
 <form class="container" action="detalleSocio.jsp">
-    <label class=" bg-primary  m-2 rounded p-2 text-white">Carga Socio con ID:</label>
-    <input type="text" name="socioID">
-    <input type="submit" value="Enviar">
+    <label class=" bg-secondary  m-2 rounded p-2 text-white">Carga Socio con ID:</label>
+    <input class="p-2 m-2" type="text" name="socioID">
+    <input class="p-2 m-2 btn btn-warning" type="submit" value="Enviar">
 </form>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

@@ -15,7 +15,7 @@
         <tr>
             <td class="mx-5 px-5 d-flex align-item-center">
                 <form class="m-5 px-5" method="get" action="index.jsp">
-                    <input type="submit" value="Volver">
+                    <input class="btn btn-primary" type="submit" value="Volver">
                 </form>
             </td>
         </tr>

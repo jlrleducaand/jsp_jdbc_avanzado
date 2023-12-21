@@ -76,6 +76,11 @@
         <th class="p-2 ">Estatura</th>
         <th class="p-2 ">Edad</th>
         <th class="p-2 ">Localidad</th>
+        <th>
+            <form method="get" action="pideNumeroSocio.jsp">
+                <input class="btn btn-primary" type="submit" value="Volver">
+            </form>
+        </th>
     </tr>
     </thead>
     <tbody>
@@ -90,11 +95,7 @@
         </td>
         <td class="p-2 text-center"><%= localidad %>
         </td>
-        <td>
-            <form method="get" action="index.jsp">
-                <input type="submit" value="Volver">
-            </form>
-        </td>
+
     </tr>
     </tbody>
 </table>

@@ -18,22 +18,22 @@
 <h2 class="text-center">FORMULARIO DE ENTRENAMIENTO NUEVO</h2><br/>
 <form class="container text-center" method="post" action="grabaEntrenamiento.jsp">
     <!--LOS VALORES NO LOS RESCATA POR QUE EN LA VALIDACION NO SE GRABAN HASTA QUE NO ESTAN TODOS CORRECTOS (BUSCAR OTRO METODO)  estan comentados -->
-    <div><label class="col-3 bg-primary rounded m-2 p-2 text-white">Tipo Entrenamiento</label>
+    <div><label class="col-3 bg-secondary rounded m-2 p-2 text-white">Tipo Entrenamiento</label>
         <select class="col-3 p-2 "type="text" name="tipo_entrenamiento"
         <option value=""> </option>
         <option value="fisico">Físico</option>
         <option value="tecnico">Técnico</option>
         </select>
     </div>  </br>
-    <div><label class="col-3 bg-primary  rounded p-2 m-2 text-white">Ubicacion</label><input class="col-3 p-2"type="text" name="ubicacion" ></div>  </br>
-    <div><label class="col-3 bg-primary  rounded p-2 m-2 text-white">Fecha Realizacion</label><input class="col-3 p-2"type="date" name="fecha_realizacion" ></div>  </br>
+    <div><label class="col-3 bg-secondary  rounded p-2 m-2 text-white">Ubicacion</label><input class="col-3 p-2"type="text" name="ubicacion" ></div>  </br>
+    <div><label class="col-3 bg-secondary  rounded p-2 m-2 text-white">Fecha Realizacion</label><input class="col-3 p-2"type="date" name="fecha_realizacion" ></div>  </br>
 
-    <input class="col-6 m-2  text-center bg-warning" type="submit" value="Aceptar">
+    <input class="col-6 m-2 text-center btn btn-warning" type="submit" value="Aceptar">
 
 
 </form>
     <form method="get" action="entrenamiento.jsp" class="container text-center">
-        <input class="col-6 m-2  text-center bg-alert" type="submit" value="Volver">
+        <input class="col-6 m-2  text-center btn btn-primary" type="submit" value="Volver">
     </form>
 
 

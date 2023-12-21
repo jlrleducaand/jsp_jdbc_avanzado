@@ -64,6 +64,11 @@
         <th class="p-2">Tipo Entrenamiento</th>
         <th class="p-2 ">Ubicacion</th>
         <th class="p-2 ">Fecha Realizacion</th>
+        <th>
+            <form method="get" action="pideNumeroEntrenamiento.jsp">
+                <input class="btn btn-primary" type="submit" value="Volver">
+            </form>
+        </th>
     </tr>
     </thead>
     <tbody>
@@ -77,11 +82,7 @@
         <td class="p-2 text-center"><%= fechaRealizacion %>
         </td>
 
-        <td>
-            <form method="get" action="entrenamiento.jsp">
-                <input type="submit" value="Volver">
-            </form>
-        </td>
+
     </tr>
     </tbody>
 </table>

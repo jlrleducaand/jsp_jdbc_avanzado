@@ -28,12 +28,12 @@
         <th>Fecha </th>
         <th>
             <form method="get" action="formularioSocio.jsp" class="text-center">
-                <input type="submit" value="Nuevo">
+                <input class="btn btn-primary" type="submit" value="Nuevo">
             </form>
         </th>
         <th>
             <form method="get" action="entrenamiento.jsp" class="text-center">
-                <input type="submit" value="Volver">
+                <input class="btn btn-primary" type="submit" value="Volver">
             </form>
         </th>
     </tr>
@@ -56,13 +56,13 @@
         <td>
             <form method="PUSH" action="borraEntrenamiento.jsp">
                 <input type="hidden" name="entrenamientoID" value="<%=listado.getString("entrenamientoID") %>"/>
-                <input type="submit" value="Borrar">
+                <input class="btn btn-secondary" type="submit" value="Borrar">
             </form>
         </td>
         <td>
             <form method="get" action="detalleEntrenamiento.jsp">
                 <input type="hidden" name="entrenamientoID" value="<%=listado.getString("entrenamientoID") %>"/>
-                <input type="submit" value="Detalle">
+                <input class="btn btn-secondary" type="submit" value="Detalle">
             </form>
         </td>
 

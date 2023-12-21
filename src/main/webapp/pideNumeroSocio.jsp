@@ -29,12 +29,12 @@
         <th>Localidad</th>
         <th>
             <form method="get" action="formularioSocio.jsp">
-                <input type="submit" value="Nuevo">
+                <input class="btn btn-primary" type="submit" value="Nuevo">
             </form>
         </th>
         <th>
             <form method="get" action="index.jsp">
-                <input type="submit" value="Volver">
+                <input class="btn btn-primary" type="submit" value="Volver">
             </form>
         </th>
     </tr>
@@ -64,13 +64,13 @@
         <td>
             <form method="get" action="borraSocio.jsp">
                 <input type="hidden" name="socioID" value="<%=listado.getString("socioID") %>"/>
-                <input type="submit" value="Borrar">
+                <input class="btn btn-secondary" type="submit" value="Borrar">
             </form>
         </td>
         <td>
             <form method="get" action="detalleSocio.jsp">
                 <input type="hidden" name="socioID" value="<%=listado.getString("socioID") %>"/>
-                <input type="submit" value="Detalle">
+                <input class="btn btn-secondary" type="submit" value="Detalle">
             </form>
         </td>
 

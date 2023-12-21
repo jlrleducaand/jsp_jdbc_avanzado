@@ -11,16 +11,16 @@
 <h2 class=" text-center">Introduzca los datos del nuevo socio:</h2>
 <form class="container text-center " method="post" action="grabaSocio.jsp">
   <!--LOS VALORES NO LOS RESCATA POR QUE EN LA VALIDACION NO SE GRABAN HASTA QUE NO ESTAN TODOS CORRECTOS (BUSCAR OTRO METODO)  estan comentados -->
-  <div><label class="col-2 bg-primary  rounded m-2 p-2 text-white">Nº socio</label> <input class="col-4 p-2 m-2"type="text" name="numero"></div>  </br>
-  <div><label class="col-2 bg-primary  rounded m-2 p-2 text-white">Nombre</label>   <input class="col-4 p-2 m-2"type="text" name="nombre"></div>  </br>
-  <div><label class="col-2 bg-primary  rounded m-2 p-2 text-white">Estatura</label> <input class="col-4 p-2 m-2"type="text" name="estatura"></div>  </br>
-  <div><label class="col-2 bg-primary  rounded m-2 p-2 text-white">Edad</label>     <input class="col-4 p-2 m-2"type="text" name="edad"></div>  </br>
-  <div><label class="col-2 bg-primary  rounded m-2 p-2 text-white">Localidad</label><input class="col-4 p-2 m-2"type="text" name="localidad"></div>  </br>
+  <div><label class="col-2 bg-secondary  rounded m-2 p-2 text-white">Nº socio</label> <input class="col-4 p-2 m-2"type="text" name="numero"></div>  </br>
+  <div><label class="col-2 bg-secondary  rounded m-2 p-2 text-white">Nombre</label>   <input class="col-4 p-2 m-2"type="text" name="nombre"></div>  </br>
+  <div><label class="col-2 bg-secondary  rounded m-2 p-2 text-white">Estatura</label> <input class="col-4 p-2 m-2"type="text" name="estatura"></div>  </br>
+  <div><label class="col-2 bg-secondary  rounded m-2 p-2 text-white">Edad</label>     <input class="col-4 p-2 m-2"type="text" name="edad"></div>  </br>
+  <div><label class="col-2 bg-secondary  rounded m-2 p-2 text-white">Localidad</label><input class="col-4 p-2 m-2"type="text" name="localidad"></div>  </br>
 
-  <input class="col-6 my-2 text-center bg-warning" type="submit" value="Aceptar"><br>
-</form>
-    <form class="container text-center " method="get" action="index.jsp">
-      <input class="col-6 my-2 text-center bg-alert" type="submit" value="Volver">
+  <div class="text-center "><input class="col-6 p-2 m-2 btn btn-warning text-center" type="submit" value="Aceptar"></div></form>
+
+    <form class="container text-center" method="get" action="index.jsp">
+      <input class="col-6 p-2 m-2 btn btn-primary flex-grow text-center" type="submit" value="Volver">
     </form>
 
 
