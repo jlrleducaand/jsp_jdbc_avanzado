@@ -27,7 +27,7 @@
         <th>Ubicacion</th>
         <th>Fecha </th>
         <th>
-            <form method="get" action="formularioSocio.jsp" class="text-center">
+            <form method="get" action="formularioEntrenamiento.jsp" class="text-center">
                 <input class="btn btn-primary" type="submit" value="Nuevo">
             </form>
         </th>

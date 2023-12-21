@@ -24,11 +24,12 @@
 
 
     <%
+        try {
+            // Resetea los errores
+            session.setAttribute("error", "");
+
         //CARGA DEL DRIVER Y PREPARACIÓN DE LA CONEXIÓN CON LA BBDD
         //	v---------UTILIZAMOS LA VERSIÓN MODERNA DE LLAMADA AL DRIVER, no deprecado:
-try {
-
-
     //Driver Conector Java  jdbc
     Class.forName("com.mysql.cj.jdbc.Driver");
 
@@ -58,6 +59,7 @@ try {
 
     %>
     <%
+
         if (session.getAttribute("error") != null){
             System.out.println(session.getAttribute("error"));
     %>

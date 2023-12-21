@@ -25,10 +25,12 @@
 
     <%
         try {
-
+            // Resetea los errores
+            session.setAttribute("error", "");
 
             //CARGA DEL DRIVER Y PREPARACIÓN DE LA CONEXIÓN CON LA BBDD
             //	v---------UTILIZAMOS LA VERSIÓN MODERNA DE LLAMADA AL DRIVER, no deprecado
+            //Driver Conector Java  jdbc
             Class.forName("com.mysql.cj.jdbc.Driver");  //Conector Java
             Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/baloncesto", "root", "1234");
             // Consulta plana sin parametros  permite usar executeQuerry
