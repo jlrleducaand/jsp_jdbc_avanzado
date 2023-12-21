@@ -26,29 +26,43 @@
     <%
         //CARGA DEL DRIVER Y PREPARACIÓN DE LA CONEXIÓN CON LA BBDD
         //	v---------UTILIZAMOS LA VERSIÓN MODERNA DE LLAMADA AL DRIVER, no deprecado:
+try {
 
-        //Driver Conector Java  jdbc
-        Class.forName("com.mysql.cj.jdbc.Driver");
 
-        //Conexion objeto  con datos para acceder a ña base de datos
-        Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/baloncesto", "root", "1234");
+    //Driver Conector Java  jdbc
+    Class.forName("com.mysql.cj.jdbc.Driver");
 
-        // consulta plana SIN PARAMETROS  permite usar executeQuerry
-        //UTILIZAR STATEMENT SÓLO EN QUERIES NO PARAMETRIZADAS  o PLANAS.
-        // STATEMENT se utiliza el objeto para enviar consultas  y actualizaciones a las BBDD
-        // Objeto de transporte de consultas y updates
-        Statement s = conexion.createStatement();
-        try (ResultSet listado = s.executeQuery("SELECT * FROM socio")) {
+    //Conexion objeto  con datos para acceder a ña base de datos
+    Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/baloncesto", "root", "1234");
 
-            while (listado.next()) {
-                out.println(listado.getString("socioID") + " " + listado.getString("nombre") + "<br>");
-            }
-            listado.close();
+    // consulta plana SIN PARAMETROS  permite usar executeQuerry
+    //UTILIZAR STATEMENT SÓLO EN QUERIES NO PARAMETRIZADAS  o PLANAS.
+    // STATEMENT se utiliza el objeto para enviar consultas  y actualizaciones a las BBDD
+    // Objeto de transporte de consultas y updates
+    Statement s = conexion.createStatement();
+    try (ResultSet listado = s.executeQuery("SELECT * FROM socio")) {
+
+        while (listado.next()) {
+            out.println(listado.getString("socioID") + " " + listado.getString("nombre") + "<br>");
         }
-        s.close();
-        conexion.close();
-    %>
+        // listado.close();  cierre redundante
 
+    }
+    s.close();
+    conexion.close();
+
+}catch (Exception e){
+    session.setAttribute("error", "Error al acceder a la Base de Datos\n Revisa el conector y el EndPoint");
+}
+
+
+    %>
+    <%
+        if (session.getAttribute("error") != null){
+            System.out.println(session.getAttribute("error"));
+    %>
+    <h4 class="text-center"><%= session.getAttribute("error")%></h4>
+    <%}%>
 
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

@@ -16,7 +16,7 @@
         <tr>
             <td class="mx-5 px-5 d-flex align-item-center">
               <form class="m-5 px-5"  method="get" action="entrenamiento.jsp">
-              <input type="submit" value="Volver">
+              <input class="btn btn-primary" type="submit" value="Volver">
               </form>
             </td>
         </tr>
@@ -24,26 +24,38 @@
 
 
     <%
-        //CARGA DEL DRIVER Y PREPARACIÓN DE LA CONEXIÓN CON LA BBDD
-        //	v---------UTILIZAMOS LA VERSIÓN MODERNA DE LLAMADA AL DRIVER, no deprecado
-        Class.forName("com.mysql.cj.jdbc.Driver");  //Conector Java
-        Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/baloncesto", "root", "1234");
-        // consulta plana sin parametros  permite usar executeQuerry
-        //UTILIZAR STATEMENT SÓLO EN QUERIES NO PARAMETRIZADAS  o PLANAS.
-        // STATEMENT se utiliza el objeto para enviar consultas  y actualizaciones a las BBDD
-        Statement s = conexion.createStatement();
-        ResultSet listado = s.executeQuery("SELECT * FROM entrenamiento");
+        try {
 
-        //puedo poner una cabecera de tabla con html
-        while (listado.next()) {
-            //puedo poner una celda con cada informacion para campo deseado con html
-            out.println(listado.getString("entrenamientoID") + " " + listado.getString("tipo_entrenamiento") + "<br>");
+
+            //CARGA DEL DRIVER Y PREPARACIÓN DE LA CONEXIÓN CON LA BBDD
+            //	v---------UTILIZAMOS LA VERSIÓN MODERNA DE LLAMADA AL DRIVER, no deprecado
+            Class.forName("com.mysql.cj.jdbc.Driver");  //Conector Java
+            Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/baloncesto", "root", "1234");
+            // Consulta plana sin parametros  permite usar executeQuerry
+            //UTILIZAR STATEMENT SOLO EN QUERIES NO PARAMETRIZADAS  o PLANAS.
+            // STATEMENT se utiliza el objeto para enviar consultas  y actualizaciones a las BBDD
+            Statement s = conexion.createStatement();
+            ResultSet listado = s.executeQuery("SELECT * FROM entrenamiento");
+
+            //puedo poner una cabecera de tabla con html
+            while (listado.next()) {
+                //puedo poner una celda con cada informacion para campo deseado con html
+                out.println(listado.getString("entrenamientoID") + " " + listado.getString("tipo_entrenamiento") + "<br>");
+            }
+            listado.close();
+            s.close();
+            conexion.close();
+        }catch (Exception e){
+            session.setAttribute("error", "Error al acceder a la Base de Datos\n Revisa el conector y el EndPoint");
         }
-        listado.close();
-        s.close();
-        conexion.close();
-    %>
 
+    %>
+    <%
+        if (session.getAttribute("error") != null){
+            System.out.println(session.getAttribute("error"));
+    %>
+    <h4 class="text-center"><%= session.getAttribute("error")%></h4>
+    <%}%>
 
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
